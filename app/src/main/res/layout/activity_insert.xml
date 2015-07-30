@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/editTextename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/age"
+        android:inputType="number"
+        android:maxLength="2"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:maxLength="12"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/cep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cep"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <Button
+        android:id="@+id/findCep"
+        android:text="@string/Find"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/tipoLogradouro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tipoLogradouro"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/logradouro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/logradouro"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/bairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/bairro"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/cidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cidade"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/estado"
+        android:paddingBottom="10dp"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+
+</LinearLayout>
+
+</ScrollView>
