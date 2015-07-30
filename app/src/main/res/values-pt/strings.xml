@@ -29,4 +29,5 @@
     <string name="cidade">Cidade</string>
     <string name="estado">Estado</string>
     <string name="Loading">Loading</string>
+    <string name="msgErrorUsernamePasswordInvalido">Usuario ou Senha Invalida</string>
 </resources>

@@ -97,13 +97,34 @@ public class ClientPersistentActivity extends AppCompatActivity{
         editTextAddress = (EditText) findViewById(R.id.editTextAddress);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextCEp = (EditText) findViewById(R.id.cep);
+        editTextCEp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_action_find_in_page, 0);
+        editTextCEp.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (editTextCEp.getRight() - editTextCEp.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        new getAddressByCep().execute(editTextCEp.getText().toString());
+                    }
+                }
+                return false;
+            }
+
+
+        });
+
+
+
+
         editTextEstado = (EditText) findViewById(R.id.estado);
         editTextCidade = (EditText) findViewById(R.id.cidade);
         editTextBairro = (EditText) findViewById(R.id.bairro);
         editTextLogradouro = (EditText) findViewById(R.id.logradouro);
         editTextTipoLogradouro = (EditText) findViewById(R.id.tipoLogradouro);
-
-        bindButtonFindCep();
     }
 
 
@@ -134,20 +155,6 @@ public class ClientPersistentActivity extends AppCompatActivity{
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-
-    private void bindButtonFindCep() {
-        buttonFindCep = (Button) findViewById(R.id.findCep);
-        buttonFindCep.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                 new getAddressByCep().execute(editTextCEp.getText().toString());
-            }
-
-        });
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {             // CLIQUE SIMPLES DO MENU.
         getMenuInflater().inflate(R.menu.menu_client_persist, menu);
