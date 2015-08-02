@@ -94,7 +94,7 @@ public class ClientPersistentActivity extends AppCompatActivity{
         editTextAge = (EditText) findViewById(R.id.editTextAge);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextCEp = (EditText) findViewById(R.id.cep);
-        editTextCEp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_action_action_find_in_page, 0);
+        editTextCEp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_search_black_24dp, 0);
         editTextCEp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
