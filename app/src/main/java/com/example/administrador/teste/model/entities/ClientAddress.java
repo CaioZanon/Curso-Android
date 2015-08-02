@@ -12,6 +12,36 @@ public class ClientAddress {
    private String cidade;
    private String estado;
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ClientAddress address = (ClientAddress) o;
+
+        if (cep != null ? !cep.equals(address.cep) : address.cep != null) return false;
+        if (tipoDeLogradouro != null ? !tipoDeLogradouro.equals(address.tipoDeLogradouro) : address.tipoDeLogradouro != null)
+            return false;
+        if (logradouro != null ? !logradouro.equals(address.logradouro) : address.logradouro != null)
+            return false;
+        if (bairro != null ? !bairro.equals(address.bairro) : address.bairro != null) return false;
+        if (cidade != null ? !cidade.equals(address.cidade) : address.cidade != null) return false;
+        return !(estado != null ? !estado.equals(address.estado) : address.estado != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = cep != null ? cep.hashCode() : 0;
+        result = 31 * result + (tipoDeLogradouro != null ? tipoDeLogradouro.hashCode() : 0);
+        result = 31 * result + (logradouro != null ? logradouro.hashCode() : 0);
+        result = 31 * result + (bairro != null ? bairro.hashCode() : 0);
+        result = 31 * result + (cidade != null ? cidade.hashCode() : 0);
+        result = 31 * result + (estado != null ? estado.hashCode() : 0);
+        return result;
+    }
+
     public String getCep() {
         return cep;
     }

@@ -1,5 +1,6 @@
 package com.example.administrador.teste.model.service;
 
+import com.example.administrador.teste.R;
 import com.example.administrador.teste.model.entities.ClientAddress;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -37,7 +38,9 @@ public final class CepService {
             int responseCode = conn.getResponseCode();
 
             if (responseCode != HTTP_OK){
-                throw new RuntimeException("Error code:" + responseCode);
+                if(responseCode == HTTP_NOT_FOUND) {
+                    throw new IOException("Error code:" + responseCode);
+                }
             }
 
             InputStream inputStream = conn.getInputStream();

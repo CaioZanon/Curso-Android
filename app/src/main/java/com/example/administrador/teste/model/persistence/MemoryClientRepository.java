@@ -14,13 +14,10 @@ public class MemoryClientRepository implements ClientRepository {
 
     private List<Client> clients;
 
-    private MemoryClientRepository(){       // construtor que bloqueia mais de uma instanciação.
+    private MemoryClientRepository(){       // construtor que bloqueia mais de uma instanciaï¿½ï¿½o.
         super();
         clients = new ArrayList<>();
     }
-
-
-
 
     public static ClientRepository getInstance() {
         if(MemoryClientRepository.singletonInstance == null){

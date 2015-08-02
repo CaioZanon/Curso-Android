@@ -38,14 +38,12 @@ public class ClientPersistentActivity extends AppCompatActivity{
     private EditText editTextName;
     private EditText editTextAge;
     private EditText editTextPhone;
-    private EditText editTextAddress;
     private EditText editTextCEp;
     private EditText editTextBairro;
     private EditText editTextCidade;
     private EditText editTextEstado;
     private EditText editTextTipoLogradouro;
     private EditText editTextLogradouro;
-    private Button buttonFindCep;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,10 +92,9 @@ public class ClientPersistentActivity extends AppCompatActivity{
 
 
         editTextAge = (EditText) findViewById(R.id.editTextAge);
-        editTextAddress = (EditText) findViewById(R.id.editTextAddress);
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextCEp = (EditText) findViewById(R.id.cep);
-        editTextCEp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_action_find_in_page, 0);
+        editTextCEp.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_action_action_find_in_page, 0);
         editTextCEp.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -162,17 +159,19 @@ public class ClientPersistentActivity extends AppCompatActivity{
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {           // A��O DO BOT�O SALVAR.
-        if(item.getItemId() == R.id.menu_save){
-            Client client = bindClient();
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-            // VALIDACAO DO FORMULARIO.
-            if(FormHelper.requiredValidate(ClientPersistentActivity.this, editTextName, editTextAge, editTextAddress, editTextPhone , editTextCEp , editTextEstado , editTextCidade , editTextBairro , editTextLogradouro, editTextTipoLogradouro)){
-                client.save();
-                Toast.makeText(ClientPersistentActivity.this, R.string.success, Toast.LENGTH_SHORT).show();
-                finish();
+        if(FormHelper.requiredValidate(ClientPersistentActivity.this, editTextName, editTextAge, editTextPhone , editTextCEp , editTextEstado , editTextCidade , editTextBairro , editTextLogradouro, editTextTipoLogradouro)){
+
+            if(item.getItemId() == R.id.menu_save){
+                Client client = bindClient();
             }
+
+            client.save();
+            Toast.makeText(ClientPersistentActivity.this, R.string.success, Toast.LENGTH_SHORT).show();
+            finish();
         }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -184,7 +183,6 @@ public class ClientPersistentActivity extends AppCompatActivity{
 
         client.setName(editTextName.getText().toString());
         client.setAge(Integer.valueOf(editTextAge.getText().toString()));
-        client.setAddress(editTextAddress.getText().toString());
         client.setPhone(editTextPhone.getText().toString());
         client.setBairro(editTextBairro.getText().toString());
         client.setCidade(editTextCidade.getText().toString());
@@ -202,7 +200,6 @@ public class ClientPersistentActivity extends AppCompatActivity{
         editTextName.setText(client.getName());
         editTextAge.setText(client.getAge().toString());
         editTextPhone.setText(client.getPhone());
-        editTextAddress.setText(client.getAddress());
         editTextBairro.setText(client.getBairro());
         editTextLogradouro.setText(client.getLogradouro());
         editTextTipoLogradouro.setText(client.getTipoDeLogradouro());
@@ -229,14 +226,19 @@ public class ClientPersistentActivity extends AppCompatActivity{
 
         @Override
         protected void onPostExecute(ClientAddress clientAddress) {
-            editTextCEp.setText(clientAddress.getCep().toString());
-            editTextTipoLogradouro.setText(clientAddress.getTipoDeLogradouro().toString());
-            editTextCidade.setText(clientAddress.getCidade().toString());
-            editTextEstado.setText(clientAddress.getEstado().toString());
-            editTextLogradouro.setText(clientAddress.getLogradouro().toString());
-            editTextBairro.setText(clientAddress.getBairro().toString());
-            progressDialog.dismiss();
+            if(clientAddress != null) {
+                editTextCEp.setText(clientAddress.getCep().toString());
+                editTextTipoLogradouro.setText(clientAddress.getTipoDeLogradouro().toString());
+                editTextCidade.setText(clientAddress.getCidade().toString());
+                editTextEstado.setText(clientAddress.getEstado().toString());
+                editTextLogradouro.setText(clientAddress.getLogradouro().toString());
+                editTextBairro.setText(clientAddress.getBairro().toString());
 
+            }else
+                Toast.makeText(ClientPersistentActivity.this, R.string.CEPNotFound, Toast.LENGTH_SHORT).show();
+
+
+            progressDialog.dismiss();
         }
     }
 

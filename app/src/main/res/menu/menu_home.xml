@@ -6,7 +6,7 @@
     <item
         android:id="@+id/menu_add"
         app:showAsAction="always"
-        android:icon="@drawable/ic_add"
+        android:icon="@drawable/ic_action_communication_textsms"
         android:title="@string/save" />
 
 

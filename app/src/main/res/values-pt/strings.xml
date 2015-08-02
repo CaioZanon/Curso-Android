@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Agenda</string>
+    <string name="app_name">AgendaCZ</string>
 
     <string name="action_settings">Configuração</string>
 
-    <string name="login">Login</string>
-    <string name="userName">Usuario</string>
+    <string name="login">Entrar</string>
+    <string name="userName">Usuário</string>
     <string name="password">Senha</string>
     <string name="name">Nome</string>
     <string name="age">Idade</string>
@@ -13,21 +13,22 @@
     <string name="address">Endereço</string>
     <string name="save">Salvar</string>
     <string name="required_field">Campo Obrigatório!</string>
-    <string name="success">Sucesso !</string>
+    <string name="success">Sucesso!</string>
     <string name="edit">Editar</string>
     <string name="delete">Excluir</string>
-    <string name="ConfirmDelete">Confirmar Delete</string>
+    <string name="ConfirmDelete">Deseja realmente Excluir ?</string>
     <string name="confirm">Confirmar</string>
     <string name="yes">Sim</string>
     <string name="cancel">Cancelar</string>
     <string name="no">Não</string>
-    <string name="cep">cep</string>
+    <string name="cep">CEP</string>
     <string name="Find">Pesquisar</string>
     <string name="logradouro">Logradouro</string>
     <string name="tipoLogradouro">Tipo de Logradouro</string>
     <string name="bairro">Bairro</string>
     <string name="cidade">Cidade</string>
     <string name="estado">Estado</string>
-    <string name="Loading">Loading</string>
-    <string name="msgErrorUsernamePasswordInvalido">Usuario ou Senha Invalida</string>
+    <string name="Loading">Carregando ...</string>
+    <string name="msgErrorUsernamePasswordInvalido">Usuário ou Senha Inválida</string>
+    <string name="CEPNotFound">CEP não Encontrado!</string>
 </resources>

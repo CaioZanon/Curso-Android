@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Agenda</string>
+    <string name="app_name">AgendaCZ</string>
 
     <string name="action_settings">Settings</string>
 
@@ -28,4 +28,5 @@
     <string name="estado">state</string>
     <string name="Loading">Loading</string>
     <string name="msgErrorUsernamePasswordInvalido">Usuario ou Senha Invalida</string>
+    <string name="CEPNotFound">CEP Não Encontrado</string>
 </resources>
